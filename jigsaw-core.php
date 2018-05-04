@@ -8,6 +8,7 @@ use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\Engines\PhpEngine;
 use Illuminate\View\Factory;
 use Illuminate\View\FileViewFinder;
+use Mni\FrontYAML\Bridge\Parsedown\ParsedownParser;
 use Mni\FrontYAML\Bridge\Symfony\SymfonyYAMLParser;
 use Mni\FrontYAML\Markdown\MarkdownParser;
 use Mni\FrontYAML\Parser;
@@ -31,7 +32,6 @@ use TightenCo\Jigsaw\Loaders\CollectionDataLoader;
 use TightenCo\Jigsaw\Loaders\CollectionRemoteItemLoader;
 use TightenCo\Jigsaw\Loaders\DataLoader;
 use TightenCo\Jigsaw\Parsers\FrontMatterParser;
-use TightenCo\Jigsaw\Parsers\ParsedownExtraParser;
 use TightenCo\Jigsaw\PathResolvers\BasicOutputPathResolver;
 use TightenCo\Jigsaw\PathResolvers\CollectionPathResolver;
 use TightenCo\Jigsaw\SiteBuilder;
@@ -69,7 +69,7 @@ $container->bind('outputPathResolver', function ($c) {
 
 $container->bind(YAMLParser::class, SymfonyYAMLParser::class);
 
-$container->bind(MarkdownParser::class, ParsedownExtraParser::class);
+$container->bind(MarkdownParser::class, ParsedownParser::class);
 
 $container->bind(Parser::class, function ($c) {
     return new Parser($c[YAMLParser::class], $c[MarkdownParser::class]);
