@@ -30,9 +30,9 @@ class BuildCommand extends Command
         $this->includeEnvironmentConfig($env);
         $this->updateBuildPaths($env);
 
-        if ($this->input->getOption('pretty') === 'true') {
-            $this->app->instance('outputPathResolver', new PrettyOutputPathResolver);
-        }
+        //if ($this->input->getOption('pretty') === 'true') {
+           // $this->app->instance('outputPathResolver', new PrettyOutputPathResolver);
+        //}
 
         $this->app->make(Jigsaw::class)->build($env);
         $this->info('Site built successfully!');

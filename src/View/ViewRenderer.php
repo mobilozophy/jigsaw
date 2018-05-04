@@ -14,7 +14,7 @@ class ViewRenderer
         'blade.markdown' => 'blade-markdown',
     ];
     private $bladeExtensions = [
-        'js', 'json', 'xml', 'rss', 'atom', 'txt', 'text', 'html'
+        'js', 'json', 'xml', 'rss', 'atom', 'txt', 'text', 'html', 'css'
     ];
 
     public function __construct(Factory $viewFactory)

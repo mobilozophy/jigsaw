@@ -5,7 +5,7 @@ class InputFile
     protected $file;
     protected $basePath;
     protected $extraBladeExtensions = [
-        'js', 'json', 'xml', 'rss', 'atom', 'txt', 'text', 'html'
+        'js', 'json', 'xml', 'rss', 'atom', 'txt', 'text', 'html', 'css'
     ];
 
     public function __construct($file, $basePath)
